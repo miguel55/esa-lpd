@@ -57,7 +57,7 @@ A comparison of the mean AP of the pre-trained detectors is summarized below. Th
 ## Installation
 
 To start using ESA-LPD as a MATLAB toolbox, download and unzip this repository
-
+```
 git clone https://github.com/miguel55/esa-lpd
 ```
 
