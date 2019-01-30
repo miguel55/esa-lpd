@@ -1,0 +1,242 @@
+\documentclass[a4paper,11pt,]{report}
+%\documentclass[a4paper,twoside,11pt,titlepage]{book}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc} 
+\usepackage[english]{babel}
+%\usepackage[spanish,activeacute,es-tabla]{babel}
+\usepackage[none]{hyphenat}
+\usepackage{enumitem}
+\usepackage{upgreek}
+\usepackage{amsmath}
+\usepackage{babelbib} 
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{dcolumn}
+\usepackage{multirow}
+\usepackage{appendix} 
+%\usepackage{slashbox}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[refpages, spanish]{gloss}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{diagbox}
+\usepackage{url}
+
+%\usepackage[backend = biber,babel=other]{biblatex}
+\usepackage{framed, color}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\atantwo}{atan2}
+
+\usepackage{geometry}
+
+
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+%\makeatletter
+%\addto\shorthandsspanish{\let\esperiod\es@period@code}
+%\makeatother
+
+% \usepackage[style=list, number=none]{glossary} %
+%\usepackage{titlesec}
+%\usepackage{pailatino}
+
+%\usepackage[chapter]{algorithm}
+\RequirePackage{verbatim}
+%\RequirePackage[Glenn]{fncychap}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{afterpage}
+
+\usepackage{longtable}
+
+\usepackage[linktocpage=true, pdfborder={000}, colorlinks]{hyperref} %referencia
+
+\hypersetup{
+pdfauthor = {Miguel Molina Moreno: mmolina@tsc.uc3m.es},
+pdftitle = {Efficient Scale-Adaptive License Plate Detection System.},
+pdfsubject = {},
+pdfkeywords = {gps, rtk},
+pdfcreator = {LaTeX con el paquete pdfLatex},
+pdfproducer = {pdflatex}
+}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\LARGE\bfseries}{\thechapter. }{0.0ex}{}[\vspace{-1cm}]
+
+
+%\usepackage{doxygen/doxygen}
+%\usepackage{pdfpages}
+\usepackage{colortbl,longtable}
+\usepackage[stable]{footmisc}
+%\usepackage{index}
+
+%\makeindex
+%\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
+%\makeglossary
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	}
+
+%\renewcommand{\glossaryname}{Glosario}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\setlength{\parskip}{4mm}
+\setlength{\parindent}{12pt}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+\renewcommand{\arraystretch}{1}
+
+\setlength{\headheight}{1.5\headheight}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
+%simplemente poniendo \begin{teorema} \end{teorema} ...
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{gray30}{gray}{.94}
+\definecolor{shadecolor}{gray}{.94}
+
+\usepackage{pdfpages}
+%\addbibresource{bibliografia/bibliografia.bib}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\vspace*{-1in}
+\begin{figure}[htb]
+\begin{center}
+\vspace*{1.6in}
+%\includegraphics[width=11cm]{imagenes/uc3m.png}
+\vspace*{1.6in}
+\end{center}
+\end{figure}
+\begin{large}
+REPORT\\
+\end{large}
+\vspace*{0.4in}
+\begin{Large}
+\textbf{ESA-LPD: EFFICIENT SCALE-ADAPTIVE LICENSE PLATE DETECTION SYSTEM} \\%Más significativo que el anterior
+\end{Large}
+\vspace*{0.3in}
+\rule{80mm}{0.1mm}\\
+\vspace*{0.2in}
+\begin{large}
+Miguel Molina Moreno: mmolina@tsc.uc3m.es\\
+Iván González Díaz\\
+Fernando Díaz de María\\
+\end{large}
+\vspace*{0.3in}
+\begin{large}
+Grupo de Procesado Multimedia\\
+Universidad Carlos III de Madrid\\
+\end{large}
+\vspace*{0.2in}
+\end{center}
+
+\end{titlepage}
+\sloppy
+\tableofcontents 
+%
+\pagenumbering{arabic}
+\setlength{\parskip}{5pt}
+
+
+\chapter{Introduction}
+
+ESA-LPD provides a reliable framework for License Plate Detection (LPD) in unconstrained environments. We propose a scale-adaptive deformable part-based model which, based on the GentleBoost algorithm, automatically models scale during the training phase by selecting the most prominent features at each scale and notably reduces the test detection time by avoiding the evaluation at different scales. In addition, our method incorporates an empirically constrained-deformation model that adapts to different levels of deformation shown by distinct local features within license plates. The algorithm details can be found in \cite{our}.
+
+The code is written in MATLAB and based on the research by Torralba et al. \cite{Torralba} and the code available in \cite{baseline}. It is organized in different directories:
+
+\begin{itemize}
+\item \emph{code}: includes the scripts and functions implemented by ourselves from Torralba et al. work.
+\item \emph{data}: includes the \texttt{.mat} files of the provided detectors in the \emph{detectors} subfolder and the \texttt{.mat} files which index the images.
+\end{itemize}
+
+\chapter{Code}
+
+\section{Requirements}
+The code requires the LabelMe Toolbox for MATLAB \cite{labelme}, PASCAL VOC annotation tool \cite{pascalvoc} to annotate the license plates and the VLFeat library for the performance measures \cite{vlfeat}.
+\section{Description}
+
+
+The provided code is organized in several scripts and functions. We describe the main ones. 
+
+\begin{itemize}
+\item \emph{initPath.m}: script to initialize the paths to LabelMeToolbox, VLFeat library and PASCAL VOC annotation software.
+\item \emph{parameters.m}: script which contains all the parameters for the databases (their names and paths to images) and methods (filters, number of dictionary images, etc.).
+\item \emph{createDatabase.m}: script to create the train and test databases, if the user wants to run the algorithm in a new database.
+\item \emph{createDictionary.m}: function which generates the dictionary of visual words.
+\item \emph{computeSigmaScale.m}: function to compute the location vector for every visual word taking into account only the license plate scale.
+\item \emph{computeSigmaScale.m}: function which calculates the location vector for every visual word taking into account the license plate scale and the empirically-constrained deformation model.
+\item \emph{computeFeatures.m}: function to compute the similarity features between the visual words and the training images.
+\item \emph{trainDetector.m}: function to train a detector based on the GentleBoost algorithm (see \emph{gentleBoost} directory).
+\item \emph{runDetector.m}: function which runs the detector over the test images.
+\item \emph{tools/scaleAdaptiveBoostedDetector.m}: auxiliary function which computes the weak detectors according to their scales and combines all the scales to obtain the final bounding boxes.
+\item \emph{main.m}: script which illustrates the whole process: database creation, dictionary computation, feature computation, training of the detector and test.
+\end{itemize}
+
+NOTE: if the user wants to change the scale-space definition, the interpolation process to obtain the bounding box size has to be changed manually in the  \emph{scaleAdaptiveBoostedDetector.m} file.
+
+\chapter{Data description}
+
+The code is distributed along with some pre-trained detectors (which include the scale-adaptive and empirically-constrained deformation part-based model) which are described below: 
+
+\begin{itemize}
+\item OS: trained with Spanish license plates.
+\item Stills\&Caltech: trained with American license plates \cite{dlagnekov, caltech}.
+\item AOLP: trained with Taiwanese license plates \cite{aolp}.
+\end{itemize}
+
+For Stills\&Caltech and AOLP database the detector include the dictionary and train partitions and we include the test-index database. All of these databases include the bounding boxes for the license plates. For Stills database we use the bounding boxes disseminated along with the dataset, and for Caltech and AOLP ones we have annotated the license plates using the PASCAL VOC annotation tool.
+
+The reported performance of the detectors in terms of average precision (AP) is shown in Table \ref{AP}.
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+\rowcolor[rgb]{0.5742,0.8008,0.8633} \textbf{Detector} & \textbf{\# test images} & \textbf{AP (\%)}\\
+\hline
+\textbf{OS} & 384 & 97.52\\
+\hline
+\textbf{Stills\&Caltech} & 186 & \ \ \ 99.41(*)\\
+\hline
+\textbf{AOLP} & 1662 & \ \ \ 98.29(*)\\
+\hline
+\end{tabular}
+\caption{Performance of the detectors}
+\label{AP}
+\end{table}
+
+(*) Because of the randomness in the dictionary edge sampling, the AP can change among different executions. The  differences in performance are negligible (less than 1\%  of the AP in comparison with the results from our article \cite{our}).
+
+\chapter{Use}
+
+The code is distributed under GNU GPL3 license (which allows use and code modification) and this documentation under Creative Commons 4.0 license, which allows its free use and modification. 
+
+About the reproducibility of the results, in similar applications to the ones described in the article, the detector can offer a high recall and precision. The performance can vary between executions due to randomness in dictionary image selection and edge sampling in dictionary license plates.
+
+
+
+
+\nocite{*}
+\bibliography{bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{babunsrt}
+%%\chapter*{}
+\thispagestyle{empty}
+
+\end{document}
