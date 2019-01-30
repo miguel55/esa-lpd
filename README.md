@@ -10,7 +10,7 @@ IEEE Transactions on Intelligent Transportation Systems, 2018
 ```
 
 This code is based on the implementation by [Antonio Torralba](http://web.mit.edu/torralba/www/) et al.
-[made available](http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html).
+made available [here](http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html).
 
 ## License
 
