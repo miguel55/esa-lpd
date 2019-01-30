@@ -63,5 +63,5 @@ git clone https://github.com/miguel55/esa-lpd
 
 ## More info
 
-See `doc\documentation.tex` for more details.
+See `doc\doc.tex` for more details.
 
