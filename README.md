@@ -20,17 +20,17 @@ ESA-LPD code is released under the GNU GPLv3 License (refer to the `LICENSE` and
 
 If you find ESA-LPD useful in your research, please consider citing:
 
-    @ARTICLE{esalpd,
-        author = {Efficient Scale-Adaptive License Plate Detection System},
-        title = {Miguel Molina-Moreno, Iv\'an Gonz\'alez D\'iaz y Fernando D\'iaz de Mar\'ia},
-        journal = {IEEE Transactions on Intelligent Transportation Systems},
-        year = {2018}
-	volume={},
-	number={},
-	pages={1-13},
-	doi={10.1109/TITS.2018.2859035},
-	ISSN={1524-9050}
-    }
+	@ARTICLE{esalpd,
+		author = {Efficient Scale-Adaptive License Plate Detection System},
+		title = {Miguel Molina-Moreno, Iv\'an Gonz\'alez D\'iaz y Fernando D\'iaz de Mar\'ia},
+		journal = {IEEE Transactions on Intelligent Transportation Systems},
+		year = {2018},
+		volume={},
+		number={},
+		pages={1-13},
+		doi={10.1109/TITS.2018.2859035},
+		ISSN={1524-9050}
+	}
 
 ## Dependencies
 
