@@ -1,16 +1,15 @@
 # ESA-LPD
 
 ## Description
-This repository contains the code and documentation to implement the license plate detector described in the paper:
+This repository contains the code and documentation to implement the license plate detector described [here](https://ieeexplore.ieee.org/document/8437177/) :
 
 ```
 Efficient Scale-Adaptive License Plate Detection System,
 Miguel Molina-Moreno, Iván González Díaz and Fernando Díaz de María
 IEEE Transactions on Intelligent Transportation Systems, 2018
-[link](https://ieeexplore.ieee.org/document/8437177/)
 ```
 
-This code is based on the implementation by [Antonio Torralba] (http://web.mit.edu/torralba/www/) et al.
+This code is based on the implementation by [Antonio Torralba](http://web.mit.edu/torralba/www/) et al.
 [made available](http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html).
 
 ## License
@@ -44,7 +43,7 @@ ESA-LPD requires the following modules:
 
 ## Demo
 
-Adjust the paths and parameters in `initPath.m` and `parameters.m` and run the file `main.m`. If you want to use a pre-trained detector, adjust the database in `parameters.m` and run the file `run Detector.m`.
+Adjust the paths and parameters in `initPath.m` and `parameters.m` and run the file `main.m`. If you want to use a pre-trained detector, adjust the database in `parameters.m` and run the file `runDetector.m`.
 
 A comparison of the mean AP of the pre-trained detectors is summarized below. The following numbers were obtained from a single run of the implementation (there may be some variance if repeated):
 
@@ -59,9 +58,7 @@ A comparison of the mean AP of the pre-trained detectors is summarized below. Th
 
 To start using ESA-LPD as a MATLAB toolbox, download and unzip this repository
 
-```
-git clone https://github.com/miguel55/ESA-LPD
-
+git clone https://github.com/miguel55/esa-lpd
 ```
 
 ## More info
