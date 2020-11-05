@@ -37,7 +37,7 @@ If you find ESA-LPD useful in your research, please consider citing:
 ESA-LPD requires the following modules:
 
 * [LabelMe](https://github.com/CSAILVision/LabelMeToolbox) - LabelMe toolbox
-* [PASCAL VOC annotation tool](http://host.robots.ox.ac.uk/pascal/VOC/PAScode.tar.gz) - extra MatConvNet layers
+* [PASCAL VOC annotation tool](http://host.robots.ox.ac.uk/pascal/VOC/PAScode.tar.gz) - Annotation toolbox
 * [VLFeat](https://github.com/vlfeat/vlfeat) - VLFeat libray
 
 
